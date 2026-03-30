@@ -1,1 +1,1 @@
-hello this file is for new developers this is not for developers only this os for backend process as well.
+this file is for developers. Not only for developers this is for backed people as well.
