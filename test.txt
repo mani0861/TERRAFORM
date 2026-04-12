@@ -1,3 +1,0 @@
- HEAD
-base
-hello base file
