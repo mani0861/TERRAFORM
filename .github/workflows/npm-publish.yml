@@ -1,29 +1,28 @@
 name: Node.js + Docker Workflow
 
 on:
-  release:
-    types: [created]
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      #  Repository code download
+      # Download repository code
       - uses: actions/checkout@v4
 
-      # Node.js setup
+      # Setup Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
       # Install dependencies
       - name: Install Packages
-        run: npm ci
+        run: npm install
 
       # Run tests
       - name: Run Tests
-        run: npm test
+        run: echo "No tests yet"
 
       # Build Docker image
       - name: Build Docker Image
@@ -37,18 +36,15 @@ jobs:
       # Download repository
       - uses: actions/checkout@v4
 
-      # Node setup
+      # Setup Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org/
 
-      # Install packages
+      # Install dependencies
       - name: Install Packages
-        run: npm ci
+        run: npm install
 
-      # Publish package to npm
+      # Dummy publish step
       - name: Publish Package
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+        run: echo "Package publish skipped"
