@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Repository code download
+      #  Repository code download
       - uses: actions/checkout@v4
 
       # Node.js setup
